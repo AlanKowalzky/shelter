@@ -1,0 +1,88 @@
+/* ===== PETS HERO HEADER ===== */
+.pets-header {
+  background-color: transparent;
+}
+
+/* ===== OUR FRIENDS PETS PAGE ===== */
+.pets-friends {
+  background-color: #f6f4f0;
+}
+
+.pets-friends__inner {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pets-friends__title {
+  font-size: 35px;
+  font-weight: 400;
+  color: #292929;
+  text-align: center;
+  margin-bottom: 60px;
+  line-height: 1.3;
+}
+
+.pets-friends__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 270px);
+  gap: 40px;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+/* ===== PAGINATION ===== */
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.pagination__btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid #f1cdb3;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Georgia', serif;
+  font-size: 15px;
+  color: #292929;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.pagination__btn:hover:not(:disabled) {
+  background-color: #f1cdb3;
+}
+
+.pagination__btn:active:not(:disabled) {
+  background-color: #cdaa90;
+  border-color: #cdaa90;
+}
+
+.pagination__btn:disabled {
+  border-color: #e0e0e0;
+  color: #e0e0e0;
+  cursor: default;
+}
+
+.pagination__btn--current {
+  background-color: #f1cdb3;
+  border-color: #f1cdb3;
+}
+
+.pagination__arrow {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.pagination__num {
+  font-size: 15px;
+  min-width: 30px;
+  text-align: center;
+}
