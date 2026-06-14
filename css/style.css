@@ -52,7 +52,8 @@ img {
   font-size: 13px;
   font-weight: 400;
   color: #fff;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.06em;
+  margin-top: 4px;
 }
 
 /* ===== NAV ===== */
@@ -148,6 +149,7 @@ img {
 
 /* ===== HEADER ===== */
 .start-screen {
+  background: url('../assets/start-screen-background.png') center top / 1280px auto no-repeat;
   background-color: #3d2c1e;
 }
 
@@ -161,6 +163,7 @@ img {
   justify-content: space-between;
   padding-top: 30px;
   padding-bottom: 30px;
+  margin: 0;
 }
 
 /* ===== PET CARD ===== */

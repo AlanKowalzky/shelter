@@ -1,21 +1,20 @@
 /* ===== HERO (Not only) ===== */
 .hero {
-  background: url('../assets/start-screen-gradient-background.png') center / cover no-repeat;
+  background: transparent;
 }
 
 .hero__inner {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
-  min-height: 600px;
+  min-height: 610px;
 }
 
 .hero__content {
   max-width: 490px;
-  padding-top: 60px;
-  padding-bottom: 80px;
   flex-shrink: 0;
-  align-self: center;
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 .hero__title {
@@ -36,7 +35,7 @@
 
 .hero__img {
   display: block;
-  height: 620px;
+  height: 610px;
   width: auto;
   flex-shrink: 0;
   align-self: flex-end;
@@ -60,10 +59,9 @@ main {
 }
 
 .about__img {
-  width: 430px;
-  height: 480px;
+  width: 300px;
+  height: 408px;
   object-fit: cover;
-  border-radius: 9px;
   flex-shrink: 0;
 }
 
