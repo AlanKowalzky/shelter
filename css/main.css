@@ -1,22 +1,21 @@
 /* ===== HERO (Not only) ===== */
 .hero {
-  background-color: #3d2c1e;
-  position: relative;
-  overflow: hidden;
+  background: url('../assets/start-screen-gradient-background.png') center / cover no-repeat;
 }
 
 .hero__inner {
   display: flex;
-  align-items: center;
-  min-height: 560px;
-  position: relative;
-  z-index: 1;
+  align-items: flex-end;
+  justify-content: space-between;
+  min-height: 600px;
 }
 
 .hero__content {
-  max-width: 500px;
+  max-width: 490px;
   padding-top: 60px;
-  padding-bottom: 60px;
+  padding-bottom: 80px;
+  flex-shrink: 0;
+  align-self: center;
 }
 
 .hero__title {
@@ -36,14 +35,15 @@
 }
 
 .hero__img {
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 100%;
-  width: 55%;
-  object-fit: cover;
-  object-position: center top;
-  z-index: 0;
+  display: block;
+  height: 620px;
+  width: auto;
+  flex-shrink: 0;
+  align-self: flex-end;
+}
+
+main {
+  display: block;
 }
 
 /* ===== ABOUT ===== */
