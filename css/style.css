@@ -29,9 +29,8 @@ img {
 
 /* ===== CONTAINER ===== */
 .container {
-  max-width: 1280px;
+  width: 1200px;
   margin: 0 auto;
-  padding: 0 60px;
 }
 
 /* ===== LOGO ===== */
@@ -149,7 +148,7 @@ img {
 
 /* ===== HEADER ===== */
 .start-screen {
-  background: url('../assets/start-screen-background.png') center top / 1280px auto no-repeat;
+  background: url('../assets/start-screen-gradient-background.png') center top / cover no-repeat;
   background-color: #3d2c1e;
 }
 
