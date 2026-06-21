@@ -370,3 +370,66 @@ main {
   line-height: 1.5;
   max-width: 420px;
 }
+
+/* ===== MEDIA QUERIES (MAIN) ===== */
+@media (max-width: 1279px) {
+  /* Tablet 768px styles */
+  .about {
+    min-width: 768px;
+  }
+  .about__inner {
+    width: 708px;
+  }
+  .our-friends {
+    min-width: 768px;
+  }
+  .our-friends__inner {
+    width: 708px;
+  }
+  .help {
+    min-width: 768px;
+  }
+  .help__inner {
+    width: 708px;
+  }
+  .help__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .in-addition {
+    min-width: 768px;
+  }
+  .in-addition__inner {
+    width: 708px;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Mobile 320px styles */
+  .about {
+    min-width: 320px;
+  }
+  .about__inner {
+    width: 300px;
+  }
+  .our-friends {
+    min-width: 320px;
+  }
+  .our-friends__inner {
+    width: 300px;
+  }
+  .help {
+    min-width: 320px;
+  }
+  .help__inner {
+    width: 300px;
+  }
+  .help__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .in-addition {
+    min-width: 320px;
+  }
+  .in-addition__inner {
+    width: 300px;
+  }
+}

@@ -14,6 +14,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 1200px;
+  margin: 0 auto;
 }
 
 .pets-friends__title {
@@ -85,4 +87,25 @@
   font-size: 15px;
   min-width: 30px;
   text-align: center;
+}
+
+/* ===== PETS PAGE MEDIA QUERIES ===== */
+@media (max-width: 1279px) {
+  /* Tablet 768px */
+  .pets-friends__inner {
+    width: 708px;
+  }
+  .pets-friends__grid {
+    grid-template-columns: repeat(2, 270px);
+  }
+}
+
+@media (max-width: 767px) {
+  /* Mobile 320px */
+  .pets-friends__inner {
+    width: 300px;
+  }
+  .pets-friends__grid {
+    grid-template-columns: repeat(1, 270px);
+  }
 }
