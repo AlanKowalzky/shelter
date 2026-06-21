@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - shelter # Zmiana tutaj wyzwala akcję
+      - shelter-2 # Zmiana tutaj wyzwala akcję
 jobs:
   deploy:
     runs-on: ubuntu-latest
