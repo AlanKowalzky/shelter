@@ -13,7 +13,7 @@ body {
   font-family: 'Georgia', serif;
   font-size: 15px;
   color: #292929;
-  background-color: #fff;
+  background-color: transparent;
   min-width: 1280px;
 }
 
@@ -154,14 +154,20 @@ img {
   width: 1280px;
   height: 908px;
   margin: 0 auto;
+  top: 0;
+  left: 0;
   background: url('../assets/start-screen-gradient-background.png'), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
-  background-size: cover;
-  background-position: center;
+  background-size: 100% 100%;
+  background-position: top center;
   background-repeat: no-repeat;
 }
 
 .header {
   background-color: transparent;
+}
+
+.header {
+  padding-top: 30px;
 }
 
 .header__inner {
@@ -171,7 +177,6 @@ img {
   width: 1200px;
   height: 60px;
   margin: 0 auto;
-  margin-top: 30px;
   padding: 0;
 }
 
