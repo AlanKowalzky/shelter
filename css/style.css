@@ -13,8 +13,10 @@ body {
   font-family: 'Georgia', serif;
   font-size: 15px;
   color: #292929;
-  background-color: transparent;
+  background-color: white;
   min-width: 1280px;
+  margin: 0;
+  padding: 0;
 }
 
 a {
@@ -151,27 +153,15 @@ img {
 /* ===== HEADER ===== */
 .start-screen {
   position: relative;
-  width: 100%;
-  min-width: 1280px;
+  width: 1280px;
   height: 908px;
-  top: 0;
-  left: 0;
-  background: radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
-  background-size: cover;
+  margin: 0 auto;
+  background: url('../assets/start-screen-gradient-background.png'), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+  background-size: 1280px 908px;
   background-position: center top;
   background-repeat: no-repeat;
 }
 
-.start-screen::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 0;
-  transform: translateX(-50%);
-  width: 1280px;
-  height: 100%;
-  background: url('../assets/start-screen-gradient-background.png') center top / 1280px 908px no-repeat;
-}
 
 .header {
   background-color: transparent;
@@ -181,14 +171,93 @@ img {
 }
 
 .header__inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  position: absolute;
   width: 1200px;
   height: 60px;
-  margin: 0 auto;
+  left: 40px;
+  top: 30px;
+  margin: 0;
   padding: 0;
 }
+
+.logo {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.logo__title {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+  font-size: 32px;
+  font-family: Georgia;
+  font-weight: 400;
+  line-height: 35.2px;
+  letter-spacing: 1.92px;
+  color: #F1CDB3;
+}
+
+.logo__subtitle {
+  position: absolute;
+  left: 4px;
+  top: 45px;
+  margin: 0;
+  font-size: 13px;
+  font-family: Arial;
+  font-weight: 400;
+  letter-spacing: 1.3px;
+  color: white;
+}
+
+.nav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+}
+
+.nav__item {
+  position: absolute;
+}
+
+.nav__item:nth-child(1) {
+  left: 757px;
+  top: 16px;
+}
+
+.nav__item:nth-child(2) {
+  left: 906px;
+  top: 16px;
+}
+
+.nav__item:nth-child(3) {
+  left: 999px;
+  top: 16px;
+}
+
+.nav__item:nth-child(4) {
+  left: 1140px;
+  top: 16px;
+}
+
+.nav__link--active {
+  color: #FAFAFA;
+  border-bottom: 3px solid #F1CDB3;
+  padding-bottom: 0;
+}
+
+.nav__link {
+  font-size: 15px;
+  font-family: Arial;
+  font-weight: 400;
+  line-height: 24px;
+  color: #CDCDCD;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
 
 /* ===== PET CARD ===== */
 .card {
