@@ -29,8 +29,10 @@ img {
 
 /* ===== CONTAINER ===== */
 .container {
-  width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
+  padding: 0 40px;
+  width: 100%;
 }
 
 /* ===== LOGO ===== */
@@ -148,8 +150,14 @@ img {
 
 /* ===== HEADER ===== */
 .start-screen {
-  background: url('../assets/start-screen-gradient-background.png') center top / cover no-repeat;
-  background-color: #3d2c1e;
+  position: relative;
+  width: 1280px;
+  height: 908px;
+  margin: 0 auto;
+  background: url('../assets/start-screen-gradient-background.png'), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .header {
@@ -160,14 +168,16 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  margin: 0;
+  width: 1200px;
+  height: 60px;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding: 0;
 }
 
 /* ===== PET CARD ===== */
 .card {
-  background-color: #fff;
+  background-color: #FAFAFA;
   border-radius: 9px;
   overflow: hidden;
   display: flex;
@@ -175,6 +185,7 @@ img {
   align-items: center;
   cursor: pointer;
   transition: box-shadow 0.3s, transform 0.3s;
+  position: relative;
 }
 
 .card:hover {
@@ -183,27 +194,44 @@ img {
 }
 
 .card__img {
-  width: 100%;
+  width: 270px;
   height: 270px;
   object-fit: cover;
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
 }
 
 .card__body {
-  padding: 15px 0 25px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .card__name {
+  position: absolute;
   font-size: 20px;
   font-weight: 400;
-  margin-bottom: 5px;
-  color: #292929;
+  font-family: Georgia;
+  letter-spacing: 1.2px;
+  color: #545454;
+  margin: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 300px;
 }
 
 .card__breed {
-  font-size: 15px;
-  color: #545454;
-  margin-bottom: 20px;
+  display: none;
+}
+
+.card__body .btn--outline {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 353px;
+  background-color: #fff;
+  border: 2px solid #F1CDB3;
 }
 
 /* ===== FOOTER ===== */
