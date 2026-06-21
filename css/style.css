@@ -195,19 +195,20 @@ img {
   transform: translateX(-50%);
   margin: 0;
   padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
-
 .logo {
-  position: absolute;
-  left: 0;
-  top: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .logo__title {
-  position: absolute;
-  left: 0;
-  top: 0;
+  position: relative;
   margin: 0;
   font-size: 32px;
   font-family: Georgia;
@@ -218,10 +219,9 @@ img {
 }
 
 .logo__subtitle {
-  position: absolute;
-  left: 4px;
-  top: 45px;
-  margin: 0;
+  position: relative;
+  margin-top: 10px;
+  margin-left: 4px;
   font-size: 13px;
   font-family: Arial;
   font-weight: 400;
@@ -233,31 +233,14 @@ img {
   margin: 0;
   padding: 0;
   list-style: none;
-  position: relative;
+  display: flex;
+  gap: 35px;
+  align-items: flex-start;
+  margin-top: 16px;
 }
 
 .nav__item {
-  position: absolute;
-}
-
-.nav__item:nth-child(1) {
-  left: 757px;
-  top: 16px;
-}
-
-.nav__item:nth-child(2) {
-  left: 906px;
-  top: 16px;
-}
-
-.nav__item:nth-child(3) {
-  left: 999px;
-  top: 16px;
-}
-
-.nav__item:nth-child(4) {
-  left: 1140px;
-  top: 16px;
+  position: relative;
 }
 
 .nav__link--active {
