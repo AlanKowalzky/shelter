@@ -3,9 +3,11 @@
   position: absolute;
   width: 1200px;
   height: 728px;
-  left: 40px;
+  left: 50%;
   top: 180px;
+  transform: translateX(-50%);
 }
+
 
 .hero__inner {
   position: relative;
