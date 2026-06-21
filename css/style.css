@@ -176,6 +176,8 @@ img {
 .header {
   background-color: transparent;
   padding-top: 30px;
+  position: relative;
+  z-index: 10;
 }
 
 .header__inner {
