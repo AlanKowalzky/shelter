@@ -153,32 +153,15 @@ img {
 .start-screen {
   position: relative;
   width: 100%;
-  min-width: 1280px;
-  height: 908px;
   margin: 0;
   padding: 0;
   background: radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
-  background-size: 1280px 908px;
-  background-position: center top;
-  background-repeat: no-repeat;
-}
-
-.start-screen::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 0;
-  transform: translateX(-50%);
-  width: 1280px;
-  height: 100%;
-  background: url('../assets/start-screen-gradient-background.png') center top / 1280px 908px no-repeat;
 }
 
 .header {
   background-color: transparent;
   position: absolute;
   width: 100%;
-  min-width: 1280px;
   top: 0;
   left: 0;
   z-index: 20;
@@ -186,14 +169,9 @@ img {
 }
 
 .header__inner {
-  position: absolute;
   width: 1200px;
-  height: 60px;
-  left: 50%;
-  top: 30px;
-  transform: translateX(-50%);
-  margin: 0;
-  padding: 0;
+  margin: 0 auto;
+  padding-top: 30px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -310,19 +288,17 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 30px 0;
+  gap: 30px;
 }
 
 .card__name {
-  position: absolute;
   font-size: 20px;
   font-weight: 400;
   font-family: Georgia;
   letter-spacing: 1.2px;
   color: #545454;
   margin: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 300px;
 }
 
 .card__breed {
@@ -330,10 +306,6 @@ img {
 }
 
 .card__body .btn--outline {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 353px;
   background-color: #fff;
   border: 2px solid #F1CDB3;
 }
@@ -397,59 +369,21 @@ img {
 /* ===== MEDIA QUERIES ===== */
 @media (max-width: 1279px) {
   /* Tablet styles 768px */
-  body {
-    min-width: 768px;
-  }
-
-  .start-screen {
-    width: 100%;
-    min-width: 768px;
-  }
-
   .header__inner {
     width: 708px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .hero {
-    width: 708px;
-    left: 50%;
-    top: 180px;
-    transform: translateX(-50%);
-  }
-
-  .footer {
-    min-width: 768px;
   }
 
   .footer__inner {
     width: 708px;
+    flex-wrap: wrap;
+    justify-content: space-around;
   }
 }
 
 @media (max-width: 767px) {
   /* Mobile styles 320px */
-  body {
-    min-width: 320px;
-  }
-
-  .start-screen {
-    width: 100%;
-    min-width: 320px;
-  }
-
   .header__inner {
     width: 300px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .hero {
-    width: 300px;
-    left: 50%;
-    top: 180px;
-    transform: translateX(-50%);
   }
 
   /* Hide navigation, show burger button */
@@ -461,11 +395,10 @@ img {
     display: flex;
   }
 
-  .footer {
-    min-width: 320px;
-  }
-
   .footer__inner {
     width: 300px;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
   }
 }

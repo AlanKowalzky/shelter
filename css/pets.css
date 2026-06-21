@@ -1,6 +1,32 @@
 /* ===== PETS HERO HEADER ===== */
-.pets-header {
-  background-color: transparent;
+.header.pets-header {
+  position: relative;
+  background-color: #fff;
+}
+
+.header.pets-header .logo__title {
+  color: #545454;
+}
+
+.header.pets-header .logo__subtitle {
+  color: #292929;
+}
+
+.header.pets-header .nav__link {
+  color: #545454;
+}
+
+.header.pets-header .nav__link--active {
+  color: #292929;
+  border-bottom-color: #f1cdb3;
+}
+
+.header.pets-header .nav__link:hover {
+  color: #292929;
+}
+
+.header.pets-header .burger-btn__line {
+  background-color: #292929;
 }
 
 /* ===== OUR FRIENDS PETS PAGE ===== */
