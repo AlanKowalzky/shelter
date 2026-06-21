@@ -85,9 +85,9 @@ main {
 /* ===== ABOUT ===== */
 .about {
   position: relative;
-  width: 1280px;
+  width: 100%;
+  min-width: 1280px;
   height: 588px;
-  margin: 0 auto;
   background-color: #fff;
 }
 
@@ -95,7 +95,8 @@ main {
   position: absolute;
   width: 1200px;
   height: 408px;
-  left: 40px;
+  left: 50%;
+  transform: translateX(-50%);
   top: 80px;
 }
 
@@ -156,9 +157,9 @@ main {
 /* ===== OUR FRIENDS ===== */
 .our-friends {
   position: relative;
-  width: 1280px;
+  width: 100%;
+  min-width: 1280px;
   height: 877px;
-  margin: 0 auto;
   background-color: #f6f4f0;
 }
 
@@ -166,7 +167,8 @@ main {
   position: absolute;
   width: 1200px;
   height: 697px;
-  left: 40px;
+  left: 50%;
+  transform: translateX(-50%);
   top: 80px;
 }
 
@@ -256,6 +258,8 @@ main {
 
 /* ===== HELP ===== */
 .help {
+  width: 100%;
+  min-width: 1280px;
   background-color: #fff;
 }
 
@@ -265,6 +269,8 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 1200px;
+  margin: 0 auto;
 }
 
 .help__title {
@@ -303,6 +309,8 @@ main {
 
 /* ===== IN ADDITION ===== */
 .in-addition {
+  width: 100%;
+  min-width: 1280px;
   background-color: #f6f6f6;
 }
 
@@ -312,6 +320,8 @@ main {
   gap: 60px;
   padding-top: 80px;
   padding-bottom: 80px;
+  width: 1200px;
+  margin: 0 auto;
 }
 
 .in-addition__img {
