@@ -155,6 +155,8 @@ img {
   width: 100%;
   margin: 0;
   padding: 0;
+  height: auto;
+  transition: height 0.3s ease;
   background: radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
 }
 

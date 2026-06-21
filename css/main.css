@@ -70,6 +70,7 @@ main {
   width: 100%;
   background-color: #fff;
   padding: 80px 0;
+  transition: padding 0.3s ease;
 }
 
 .about__inner {
@@ -120,6 +121,7 @@ main {
   width: 100%;
   background-color: #f6f4f0;
   padding: 80px 0;
+  transition: padding 0.3s ease;
 }
 
 .our-friends__inner {
@@ -186,6 +188,7 @@ main {
 .help {
   width: 100%;
   background-color: #fff;
+  transition: padding 0.3s ease;
 }
 
 .help__inner {
@@ -236,6 +239,7 @@ main {
 .in-addition {
   width: 100%;
   background-color: #f6f6f6;
+  transition: padding 0.3s ease;
 }
 
 .in-addition__inner {
