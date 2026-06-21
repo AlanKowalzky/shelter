@@ -435,7 +435,21 @@ img {
   }
 
   .start-screen {
+    width: 100%;
     min-width: 320px;
+  }
+
+  .header__inner {
+    width: 300px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .hero {
+    width: 300px;
+    left: 50%;
+    top: 180px;
+    transform: translateX(-50%);
   }
 
   /* Hide navigation, show burger button */
