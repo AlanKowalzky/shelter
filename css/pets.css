@@ -29,6 +29,12 @@
   background-color: #292929;
 }
 
+.pets-footer .footer__contact img {
+  width: auto;
+  height: 20px;
+  filter: none;
+}
+
 /* ===== OUR FRIENDS PETS PAGE ===== */
 .pets-friends {
   background-color: #f6f4f0;
@@ -123,6 +129,10 @@
   }
   .pets-friends__grid {
     grid-template-columns: repeat(2, 270px);
+    gap: 30px 40px;
+  }
+  .pets-friends__grid .card:nth-child(n + 7) {
+    display: none;
   }
 }
 
@@ -130,8 +140,21 @@
   /* Mobile 320px */
   .pets-friends__inner {
     width: 300px;
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+  .pets-friends__title {
+    font-size: 25px;
+    line-height: 32.5px;
+    letter-spacing: 1.5px;
+    margin-bottom: 42px;
   }
   .pets-friends__grid {
     grid-template-columns: repeat(1, 270px);
+    gap: 30px;
+    margin-bottom: 42px;
+  }
+  .pets-friends__grid .card:nth-child(n + 4) {
+    display: none;
   }
 }
