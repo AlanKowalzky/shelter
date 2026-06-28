@@ -29,7 +29,9 @@ function generate48Pets(pets) {
 
   let result = shuffleArray(repeated);
   let attempt = 0;
-  while (hasAdjacentDuplicates(result) && attempt < 1000) {
+  const maxAttempts = 1000;
+
+  while (hasAdjacentDuplicates(result) && attempt < maxAttempts) {
     result = shuffleArray(result);
     attempt += 1;
   }
@@ -46,7 +48,7 @@ function buildCard(pet) {
     <div class="card__body">
       <h2 class="card__name">${pet.name}</h2>
       <p class="card__breed">${pet.type} · ${pet.breed}</p>
-      <a href="#" class="btn btn--outline">Learn more</a>
+      <button class="btn btn--outline" data-pet-id="${pet.id}">Learn more</button>
     </div>
   `;
   return card;
@@ -54,14 +56,14 @@ function buildCard(pet) {
 
 export function initPagination(pets) {
   const grid = document.querySelector('.pets-friends__grid');
-  const paginationContainer = document.querySelector('.pagination');
-  const firstBtn = document.querySelector('.pagination__btn--first');
-  const prevBtn = document.querySelector('.pagination__btn--prev');
-  const nextBtn = document.querySelector('.pagination__btn--next');
-  const lastBtn = document.querySelector('.pagination__btn--last');
-  const pageIndicator = document.querySelector('.pagination__current');
+  const paginationNav = document.querySelector('.pagination');
+  const firstBtn = paginationNav?.querySelector('.pagination__btn--first');
+  const prevBtn = paginationNav?.querySelector('.pagination__btn--prev');
+  const nextBtn = paginationNav?.querySelector('.pagination__btn--next');
+  const lastBtn = paginationNav?.querySelector('.pagination__btn--last');
+  const pageIndicator = paginationNav?.querySelector('.pagination__current');
 
-  if (!grid || !paginationContainer || !firstBtn || !prevBtn || !nextBtn || !lastBtn || !pageIndicator) {
+  if (!grid || !paginationNav || !firstBtn || !prevBtn || !nextBtn || !lastBtn || !pageIndicator) {
     return;
   }
 
@@ -70,27 +72,37 @@ export function initPagination(pets) {
   let cardsPerPage = getCardsPerPage();
   let totalPages = Math.ceil(cards.length / cardsPerPage);
 
+  function updateButtonStates() {
+    firstBtn.disabled = currentPage === 1;
+    prevBtn.disabled = currentPage === 1;
+    nextBtn.disabled = currentPage === totalPages;
+    lastBtn.disabled = currentPage === totalPages;
+  }
+
   function renderPage(page) {
-    grid.innerHTML = '';
-    const start = (page - 1) * cardsPerPage;
-    const pageCards = cards.slice(start, start + cardsPerPage);
-    pageCards.forEach((pet) => grid.appendChild(buildCard(pet)));
-    pageIndicator.textContent = `${page} / ${totalPages}`;
-    firstBtn.disabled = page === 1;
-    prevBtn.disabled = page === 1;
-    nextBtn.disabled = page === totalPages;
-    lastBtn.disabled = page === totalPages;
     grid.classList.add('page-transition');
+
     setTimeout(() => {
+      grid.innerHTML = '';
+      const start = (page - 1) * cardsPerPage;
+      const pageCards = cards.slice(start, start + cardsPerPage);
+      pageCards.forEach((pet) => {
+        grid.appendChild(buildCard(pet));
+      });
+      pageIndicator.textContent = `${page} / ${totalPages}`;
+      updateButtonStates();
       grid.classList.remove('page-transition');
-    }, 500);
+    }, 250);
   }
 
   function updateLayout() {
-    cardsPerPage = getCardsPerPage();
-    totalPages = Math.ceil(cards.length / cardsPerPage);
-    currentPage = Math.min(currentPage, totalPages);
-    renderPage(currentPage);
+    const newCardsPerPage = getCardsPerPage();
+    if (newCardsPerPage !== cardsPerPage) {
+      cardsPerPage = newCardsPerPage;
+      totalPages = Math.ceil(cards.length / cardsPerPage);
+      currentPage = Math.min(currentPage, totalPages);
+      renderPage(currentPage);
+    }
   }
 
   firstBtn.addEventListener('click', () => {
@@ -123,5 +135,5 @@ export function initPagination(pets) {
 
   window.addEventListener('resize', updateLayout);
 
-  updateLayout();
+  renderPage(currentPage);
 }
