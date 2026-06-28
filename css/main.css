@@ -534,7 +534,7 @@ main {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .nav {
     position: fixed;
     top: 60px;
@@ -543,6 +543,7 @@ main {
     bottom: 0;
     width: 100%;
     background-color: #FFFFFF;
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding: 20px 15px;
@@ -571,6 +572,30 @@ main {
   .nav__link {
     display: block;
     padding: 10px 15px;
+  }
+
+  .nav__close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 32px;
+    font-weight: 300;
+    color: #292929;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+    z-index: 102;
+  }
+
+  .nav__close:hover {
+    transform: scale(1.2);
   }
 }
 

@@ -4,6 +4,7 @@ export function initBurgerMenu() {
   const burgerBtn = document.querySelector('.burger-btn');
   const nav = document.querySelector('.nav');
   const navLinks = document.querySelectorAll('.nav__link');
+  const navCloseBtn = document.querySelector('.nav__close');
   const header = document.querySelector('.header');
 
   if (!burgerBtn || !nav || !header) {
@@ -52,13 +53,14 @@ export function initBurgerMenu() {
   }
 
   burgerBtn.addEventListener('click', () => {
-    if (!shouldUseMobileMenu()) {
-      return;
-    }
     toggleMenu();
   });
 
   overlay.addEventListener('click', closeMenu);
+
+  if (navCloseBtn) {
+    navCloseBtn.addEventListener('click', closeMenu);
+  }
 
   navLinks.forEach((link) => {
     link.addEventListener('click', () => {

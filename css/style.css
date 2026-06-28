@@ -64,6 +64,15 @@ img {
 }
 
 /* ===== NAV ===== */
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav__close {
+  display: none;
+}
+
 .nav__list {
   display: flex;
   gap: 35px;
