@@ -1,0 +1,98 @@
+[
+  {
+    "id": "katrine",
+    "name": "Katrine",
+    "type": "Cat",
+    "breed": "British Shorthair",
+    "description": "Katrine is calm, affectionate and loves comfortable places. She enjoys quiet afternoons on the windowsill and gentle stroking.",
+    "age": "2 years",
+    "inoculations": ["panleukopenia"],
+    "diseases": ["none"],
+    "parasites": ["none"],
+    "image": "assets/pets-katrine.png"
+  },
+  {
+    "id": "jennifer",
+    "name": "Jennifer",
+    "type": "Dog",
+    "breed": "Labrador",
+    "description": "Jennifer is friendly, energetic and loyal. She loves long walks and playing fetch with her favorite ball.",
+    "age": "1 year",
+    "inoculations": ["distemper", "parvovirus"],
+    "diseases": ["none"],
+    "parasites": ["none"],
+    "image": "assets/pets-jennifer.png"
+  },
+  {
+    "id": "woody",
+    "name": "Woody",
+    "type": "Dog",
+    "breed": "Golden Retriever",
+    "description": "Woody is cheerful and loves people. He is smart, gentle, and always ready to lend a paw or sit by your side.",
+    "age": "3 years",
+    "inoculations": ["rabies", "hepatitis"],
+    "diseases": ["none"],
+    "parasites": ["none"],
+    "image": "assets/pets-woody.png"
+  },
+  {
+    "id": "sophia",
+    "name": "Sophia",
+    "type": "Dog",
+    "breed": "Shih Tzu",
+    "description": "Sophia is affectionate and playful. She enjoys quiet cuddles as much as short adventures outdoors.",
+    "age": "1 year",
+    "inoculations": ["parainfluenza"],
+    "diseases": ["none"],
+    "parasites": ["none"],
+    "image": "assets/pets-sophia.png"
+  },
+  {
+    "id": "timmy",
+    "name": "Timmy",
+    "type": "Cat",
+    "breed": "British Shorthair",
+    "description": "Timmy is curious and clever. He loves exploring boxes and napping in cozy corners.",
+    "age": "2 years",
+    "inoculations": ["feline rhinotracheitis"],
+    "diseases": ["none"],
+    "parasites": ["none"],
+    "image": "assets/pets-timmy.png"
+  },
+  {
+    "id": "charly",
+    "name": "Charly",
+    "type": "Dog",
+    "breed": "Jack Russell Terrier",
+    "description": "Charly is active, curious and brave. He loves running, learning tricks and meeting new people.",
+    "age": "3 years",
+    "inoculations": ["parvovirus"],
+    "diseases": ["none"],
+    "parasites": ["none"],
+    "image": "assets/pets-charly.png"
+  },
+  {
+    "id": "scarlett",
+    "name": "Scarlett",
+    "type": "Dog",
+    "breed": "Jack Russell Terrier",
+    "description": "Scarlett is playful and affectionate. She enjoys active games and loves to be close to her family.",
+    "age": "3 years",
+    "inoculations": ["distemper"],
+    "diseases": ["none"],
+    "parasites": ["none"],
+    "image": "assets/pets-scarlet.png"
+  },
+  {
+    "id": "freddie",
+    "name": "Freddie",
+    "type": "Cat",
+    "breed": "Maine Coon",
+    "description": "Freddie is gentle and affectionate. He enjoys quiet company and long naps in a sunny spot.",
+    "age": "4 years",
+    "inoculations": ["rabies"],
+    "diseases": ["none"],
+    "parasites": ["none"],
+    "image": "assets/pets-freddie.png"
+  }
+]
