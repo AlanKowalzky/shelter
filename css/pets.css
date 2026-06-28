@@ -1,6 +1,38 @@
 /* ===== PETS HERO HEADER ===== */
-.pets-header {
-  background-color: transparent;
+.header.pets-header {
+  position: relative;
+  background-color: #fff;
+}
+
+.header.pets-header .logo__title {
+  color: #545454;
+}
+
+.header.pets-header .logo__subtitle {
+  color: #292929;
+}
+
+.header.pets-header .nav__link {
+  color: #545454;
+}
+
+.header.pets-header .nav__link--active {
+  color: #292929;
+  border-bottom-color: #f1cdb3;
+}
+
+.header.pets-header .nav__link:hover {
+  color: #292929;
+}
+
+.header.pets-header .burger-btn__line {
+  background-color: #292929;
+}
+
+.pets-footer .footer__contact img {
+  width: auto;
+  height: 20px;
+  filter: none;
 }
 
 /* ===== OUR FRIENDS PETS PAGE ===== */
@@ -14,6 +46,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 1200px;
+  margin: 0 auto;
 }
 
 .pets-friends__title {
@@ -85,4 +119,127 @@
   font-size: 15px;
   min-width: 30px;
   text-align: center;
+}
+
+/* ===== PETS PAGE MEDIA QUERIES ===== */
+@media (max-width: 1279px) {
+  /* Tablet 768px */
+  .pets-friends__inner {
+    width: 708px;
+  }
+  .pets-friends__grid {
+    grid-template-columns: repeat(2, 270px);
+    gap: 30px 40px;
+  }
+  .pets-friends__grid .card:nth-child(n + 7) {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Mobile 320px */
+  .pets-friends__inner {
+    width: 300px;
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+  .pets-friends__title {
+    font-size: 25px;
+    line-height: 32.5px;
+    letter-spacing: 1.5px;
+    margin-bottom: 42px;
+  }
+  .pets-friends__grid {
+    grid-template-columns: repeat(1, 270px);
+    gap: 30px;
+    margin-bottom: 42px;
+  }
+  .pets-friends__grid .card:nth-child(n + 4) {
+    display: none;
+  }
+}
+
+/* ===== PAGINATION ===== */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 60px;
+  padding: 20px;
+}
+
+.pagination__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: #FFFFFF;
+  border: 2px solid #F1CDB3;
+  border-radius: 8px;
+  color: #292929;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.pagination__btn:hover:not(:disabled):not(.pagination__current) {
+  background-color: #F1CDB3;
+  color: #FFFFFF;
+}
+
+.pagination__btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #EBEBEB;
+  border-color: #EBEBEB;
+}
+
+.pagination__current {
+  cursor: default;
+  background-color: #F1CDB3;
+  color: #FFFFFF;
+  border-color: #F1CDB3;
+  padding: 0 15px;
+  width: auto;
+  min-width: 80px;
+}
+
+.pagination__arrow {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Responsive Pagination */
+@media (max-width: 1279px) {
+  .pagination {
+    gap: 8px;
+  }
+
+  .pagination__btn {
+    width: 45px;
+    height: 45px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 767px) {
+  .pagination {
+    gap: 6px;
+    margin-top: 42px;
+  }
+
+  .pagination__btn {
+    width: 40px;
+    height: 40px;
+    font-size: 11px;
+  }
+
+  .pagination__current {
+    min-width: 70px;
+    padding: 0 10px;
+  }
 }

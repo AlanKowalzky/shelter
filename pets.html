@@ -2,22 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=1280">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Our Pets – Cozy House Shelter</title>
   <link rel="icon" href="assets/Logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/pets.css">
 </head>
 <body>
 
-  <div class="start-screen">
-    <header class="header" id="top">
-      <div class="container header__inner">
+    <header class="header pets-header" id="top">
+      <div class="header__inner">
         <a href="index.html" class="logo" aria-label="Cozy House home">
           <span class="logo__title">Cozy House</span>
           <span class="logo__subtitle">Shelter for pets in Boston</span>
         </a>
         <nav class="nav" aria-label="Main navigation">
+          <button class="nav__close" aria-label="Close menu">×</button>
           <ul class="nav__list">
             <li class="nav__item">
               <a href="index.html" class="nav__link">About the shelter</a>
@@ -33,13 +34,17 @@
             </li>
           </ul>
         </nav>
+        <button class="burger-btn" aria-label="Toggle menu">
+          <span class="burger-btn__line"></span>
+          <span class="burger-btn__line"></span>
+          <span class="burger-btn__line"></span>
+        </button>
       </div>
     </header>
-  </div>
 
   <main>
     <section class="pets-friends" id="our-friends">
-      <div class="container pets-friends__inner">
+      <div class="pets-friends__inner">
         <h1 class="pets-friends__title">Our friends who<br>are looking for a house</h1>
 
         <div class="pets-friends__grid">
@@ -68,7 +73,7 @@
             </div>
           </article>
           <article class="card">
-            <img src="assets/pets-katrine-2.png" alt="Sophia – Shih Tzu dog" class="card__img">
+            <img src="assets/pets-sophia.png" alt="Sophia – Shih Tzu dog" class="card__img">
             <div class="card__body">
               <h2 class="card__name">Sophia</h2>
               <p class="card__breed">Dog · Shih Tzu</p>
@@ -100,7 +105,7 @@
             </div>
           </article>
           <article class="card">
-            <img src="assets/pets-katrine-1.png" alt="Freddie – British Shorthair cat" class="card__img">
+            <img src="assets/pets-freddie.png" alt="Freddie – British Shorthair cat" class="card__img">
             <div class="card__body">
               <h2 class="card__name">Freddie</h2>
               <p class="card__breed">Cat · British Shorthair</p>
@@ -111,17 +116,17 @@
 
         <!-- PAGINATION -->
         <nav class="pagination" aria-label="Pagination">
-          <button class="pagination__btn" disabled aria-label="First page">
+          <button class="pagination__btn pagination__btn--first" aria-label="First page">
             <span class="pagination__arrow">&laquo;</span>
           </button>
-          <button class="pagination__btn" disabled aria-label="Previous page">
+          <button class="pagination__btn pagination__btn--prev" aria-label="Previous page">
             <span class="pagination__arrow">&lsaquo;</span>
           </button>
-          <span class="pagination__btn pagination__btn--current" aria-current="page">1</span>
-          <button class="pagination__btn" aria-label="Next page">
+          <span class="pagination__btn pagination__current" aria-current="page">1 / 6</span>
+          <button class="pagination__btn pagination__btn--next" aria-label="Next page">
             <span class="pagination__arrow">&rsaquo;</span>
           </button>
-          <button class="pagination__btn" aria-label="Last page">
+          <button class="pagination__btn pagination__btn--last" aria-label="Last page">
             <span class="pagination__arrow">&raquo;</span>
           </button>
         </nav>
@@ -131,16 +136,16 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="footer" id="contacts">
-    <div class="container footer__inner">
+  <footer class="footer pets-footer" id="contacts">
+    <div class="footer__inner">
       <div class="footer__col">
         <h2 class="footer__heading">For questions<br>and suggestions</h2>
         <a href="mailto:email@shelter.com" class="footer__contact">
-          <img src="assets/list-item.png" alt="Email icon">
+          <img src="assets/mail.png" alt="Email icon">
           email@shelter.com
         </a>
         <a href="tel:+136745677543" class="footer__contact">
-          <img src="assets/list-item.png" alt="Phone icon">
+          <img src="assets/phone.png" alt="Phone icon">
           +13 674 567 75 43
         </a>
       </div>
@@ -152,7 +157,7 @@
           rel="noopener noreferrer"
           class="footer__contact"
         >
-          <img src="assets/list-item.png" alt="Location icon">
+          <img src="assets/pin.svg" alt="Location icon">
           1 Central Street, Boston<br>(entrance from the store)
         </a>
         <a
@@ -161,7 +166,7 @@
           rel="noopener noreferrer"
           class="footer__contact"
         >
-          <img src="assets/list-item.png" alt="Location icon">
+          <img src="assets/pin.svg" alt="Location icon">
           18 South Park, London
         </a>
       </div>
@@ -173,7 +178,6 @@
     </div>
   </footer>
 
-  <script src="js/index.js"></script>
+  <script type="module" src="js/index.js"></script>
 </body>
 </html>
-
