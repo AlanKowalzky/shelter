@@ -512,7 +512,7 @@ main {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.85);
   z-index: 99;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
@@ -522,7 +522,6 @@ main {
   display: block;
   opacity: 1;
 }
-
 .burger-btn {
   display: none;
   flex-direction: column;
@@ -566,26 +565,28 @@ main {
   }
   .nav {
     position: fixed;
-    top: 60px;
-    left: 0;
+    top: 0;
     right: 0;
     bottom: 0;
-    width: 100%;
-    background-color: #FFFFFF;
+    width: 70vw;
+    max-width: 380px;
+    min-width: 280px;
+    background-color: #141617;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    padding: 20px 15px;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 20px;
+    gap: 28px;
     z-index: 101;
-    transform: translateX(-100%);
-    opacity: 0;
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    transform: translateX(100%);
+    opacity: 1;
+    transition: transform 0.3s ease-in-out;
     overflow-y: auto;
   }
 
   .nav--open {
     transform: translateX(0);
-    opacity: 1;
   }
 
   .nav__list {
@@ -595,12 +596,43 @@ main {
 
   .nav__item {
     width: 100%;
-    margin: 10px 0;
+    margin: 18px 0;
   }
 
   .nav__link {
     display: block;
+    width: 100%;
     padding: 10px 15px;
+    font-size: 28px;
+    line-height: 1.2;
+    font-weight: 700;
+    color: #f4f3ef;
+    text-align: center;
+    letter-spacing: 0.02em;
+    position: relative;
+    border-bottom: none;
+    transition: color 0.2s ease;
+  }
+
+  .nav__link:hover,
+  .nav__link:focus {
+    color: #fff;
+  }
+
+  .nav__link--active {
+    color: #f4f3ef;
+  }
+
+  .nav__link--active::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+    transform: translateX(-50%);
+    width: 75%;
+    height: 3px;
+    background-color: #d4b38e;
+    border-radius: 999px;
   }
 
   .nav__close {
@@ -611,7 +643,7 @@ main {
     border: none;
     font-size: 32px;
     font-weight: 300;
-    color: #292929;
+    color: #f4f3ef;
     cursor: pointer;
     padding: 0;
     width: 30px;
