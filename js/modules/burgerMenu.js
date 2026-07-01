@@ -16,8 +16,8 @@ export function initBurgerMenu() {
   const overlay = document.createElement('div');
   overlay.className = 'nav-overlay';
   overlay.setAttribute('aria-hidden', 'true');
-  // append overlay to body so it covers the full viewport
-  document.body.appendChild(overlay);
+  // append overlay to header so it stays in the same stacking context as nav
+  header.appendChild(overlay);
 
   function setBodyScrollBlocked(blocked) {
     document.body.style.overflow = blocked ? 'hidden' : '';
@@ -67,7 +67,40 @@ export function initBurgerMenu() {
   }
 
   navLinks.forEach((link) => {
-    link.addEventListener('click', () => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+
+      // If this is a placeholder anchor, close menu and do nothing else.
+      if (href === '#') {
+        e.preventDefault();
+        if (shouldUseMobileMenu()) {
+          closeMenu();
+        }
+        return;
+      }
+
+      // If link is an in-page anchor (e.g. "#contacts"), handle scrolling.
+      if (href && href.startsWith('#')) {
+        e.preventDefault();
+        const id = href.slice(1);
+        // close menu first
+        closeMenu();
+        // wait for menu close animation then scroll to target
+        setTimeout(() => {
+          const target = document.getElementById(id);
+          if (target) {
+            const headerStyle = window.getComputedStyle(header).position;
+            const headerHeight = headerStyle === 'fixed' || headerStyle === 'sticky'
+              ? header.offsetHeight
+              : 0;
+            const top = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+            window.scrollTo({ top, behavior: 'smooth' });
+          }
+        }, 350);
+        return;
+      }
+
+      // For links that navigate to other pages, just close the menu on mobile.
       if (shouldUseMobileMenu()) {
         closeMenu();
       }
