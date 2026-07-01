@@ -62,7 +62,8 @@ function closeModal() {
     currentModal = null;
     currentOverlay = null;
     document.body.style.overflow = '';
-    
+    document.documentElement.style.overflow = '';
+
     if (escapeKeyHandler) {
       window.removeEventListener('keydown', escapeKeyHandler);
       escapeKeyHandler = null;
@@ -83,8 +84,28 @@ export function initModal(pets) {
     }
   }
 
-  function openModal(petId) {
-    const pet = petsMap.get(petId);
+  async function openModal(petId) {
+    let pet = petsMap.get(petId);
+
+    // Fallback: if pets weren't loaded earlier, try to fetch pets.json on demand
+    if (!pet) {
+      try {
+        const resp = await fetch('assets/pets.json');
+        if (resp.ok) {
+          const data = await resp.json();
+          const found = data.find((p) => p.id === petId);
+          if (found) {
+            pet = found;
+            petsMap.set(petId, pet);
+          }
+        } else {
+          console.warn('Fallback fetch pets.json failed:', resp.status);
+        }
+      } catch (err) {
+        console.error('Error fetching pets.json fallback:', err);
+      }
+    }
+
     if (!pet) return;
 
     // Close any existing modal first
@@ -96,8 +117,11 @@ export function initModal(pets) {
     currentModal = buildModalContent(pet);
 
     document.body.appendChild(currentOverlay);
-    document.body.appendChild(currentModal);
+    // append modal into overlay so overlay flex centering works
+    currentOverlay.appendChild(currentModal);
+    // block scroll on both body and html
     document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
 
     escapeKeyHandler = onKeyDown;
     window.addEventListener('keydown', escapeKeyHandler);
@@ -105,18 +129,25 @@ export function initModal(pets) {
     currentOverlay.addEventListener('click', closeModal);
     currentModal.querySelector(`.${MODAL_CLOSE_CLASS}`).addEventListener('click', closeModal);
 
-    // Trigger animation by forcing reflow
+    // Start hidden, then make visible to ensure CSS transition (avoids race)
+    currentOverlay.classList.add('modal-overlay--hidden');
+    currentModal.classList.add('pet-modal--hidden');
+
+    // Trigger animation by switching to visible state after a short delay
     setTimeout(() => {
+      currentOverlay.classList.remove('modal-overlay--hidden');
       currentOverlay.classList.add('modal-overlay--visible');
-    }, 0);
+      currentModal.classList.remove('pet-modal--hidden');
+      currentModal.classList.add('pet-modal--visible');
+    }, 20);
   }
 
   // Event delegation for all cards
   document.addEventListener('click', (event) => {
-    const btn = event.target.closest('button[data-pet-id], a[data-pet-id]');
-    if (!btn) return;
+    const target = event.target.closest('[data-pet-id]');
+    if (!target) return;
 
-    const petId = btn.dataset.petId;
+    const petId = target.dataset.petId;
     if (!petId) return;
 
     event.preventDefault();

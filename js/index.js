@@ -6,8 +6,10 @@ import { initModal } from './modules/modal.js';
 
 async function bootstrap() {
   try {
-    const pets = await loadPets();
+    // init burger menu early so it works even if fetching pets fails
     initBurgerMenu();
+
+    const pets = await loadPets();
     initModal(pets);
 
     if (document.querySelector('.our-friends__slider')) {

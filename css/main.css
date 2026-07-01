@@ -150,7 +150,8 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 30px;
+  gap: 24px;
+  padding: 0 10px;
 }
 
 .slider-btn {
@@ -175,13 +176,44 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 90px;
+  gap: 36px;
   flex: 1;
+  min-width: 0;
 }
 
 .our-friends__grid .card {
   width: 270px;
   flex-shrink: 0;
+}
+
+@media (max-width: 1279px) {
+  .our-friends__slider {
+    gap: 20px;
+  }
+
+  .our-friends__grid {
+    gap: 28px;
+  }
+}
+
+@media (max-width: 767px) {
+  .our-friends__slider {
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .slider-btn {
+    width: 44px;
+    height: 44px;
+  }
+
+  .our-friends__grid {
+    gap: 18px;
+  }
+
+  .our-friends__grid .card {
+    width: 220px;
+  }
 }
 
 /* ===== HELP ===== */
@@ -503,6 +535,7 @@ main {
   cursor: pointer;
   padding: 0;
   z-index: 101;
+  transition: transform 0.3s ease-in-out;
 }
 
 .burger-btn__line {
@@ -511,30 +544,26 @@ main {
   height: 2px;
   background-color: #292929;
   margin: 4px 0;
-  transition: all 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
 }
 
-.burger-btn--open .burger-btn__line:nth-child(1) {
-  transform: rotate(45deg) translateY(11px);
+.header:not(.pets-header) .burger-btn__line {
+  background-color: #F1CDB3;
 }
 
-.burger-btn--open .burger-btn__line:nth-child(2) {
-  opacity: 0;
-  transform: translateX(-10px);
-}
-
-.burger-btn--open .burger-btn__line:nth-child(3) {
-  transform: rotate(-45deg) translateY(-11px);
+.burger-btn--open {
+  transform: rotate(90deg);
 }
 
 /* Tablet and Mobile breakpoints */
 @media (max-width: 1279px) {
+  /* keep other tablet styles here */
+}
+
+@media (max-width: 767px) {
   .burger-btn {
     display: flex;
   }
-}
-
-@media (max-width: 768px) {
   .nav {
     position: fixed;
     top: 60px;
@@ -693,8 +722,9 @@ main {
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.8);
-  z-index: 200;
-  opacity: 1;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
   transition: opacity 0.3s ease-in-out;
   display: flex;
   align-items: center;
@@ -706,6 +736,11 @@ main {
   pointer-events: none;
 }
 
+.modal-overlay--visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .pet-modal {
   background-color: #FFFFFF;
   border-radius: 10px;
@@ -713,15 +748,24 @@ main {
   width: 90%;
   padding: 30px;
   position: relative;
-  z-index: 201;
+  z-index: 10000;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  animation: modalOpen 0.3s ease-in-out;
+  transform: scale(0.95);
+  opacity: 0;
+  transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out;
   max-height: 90vh;
   overflow-y: auto;
 }
 
 .pet-modal--hidden {
-  animation: modalClose 0.3s ease-in-out;
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.pet-modal--visible {
+  opacity: 1;
+  transform: scale(1);
+  animation: modalOpen 0.25s ease-in-out;
 }
 
 @keyframes modalOpen {

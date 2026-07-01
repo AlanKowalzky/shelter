@@ -16,10 +16,12 @@ export function initBurgerMenu() {
   const overlay = document.createElement('div');
   overlay.className = 'nav-overlay';
   overlay.setAttribute('aria-hidden', 'true');
-  header.appendChild(overlay);
+  // append overlay to body so it covers the full viewport
+  document.body.appendChild(overlay);
 
   function setBodyScrollBlocked(blocked) {
     document.body.style.overflow = blocked ? 'hidden' : '';
+    document.documentElement.style.overflow = blocked ? 'hidden' : '';
   }
 
   function openMenu() {
@@ -27,6 +29,7 @@ export function initBurgerMenu() {
     isOpen = true;
     nav.classList.add('nav--open');
     burgerBtn.classList.add('burger-btn--open');
+    burgerBtn.setAttribute('aria-expanded', 'true');
     overlay.classList.add('nav-overlay--visible');
     setBodyScrollBlocked(true);
   }
@@ -36,6 +39,7 @@ export function initBurgerMenu() {
     isOpen = false;
     nav.classList.remove('nav--open');
     burgerBtn.classList.remove('burger-btn--open');
+    burgerBtn.setAttribute('aria-expanded', 'false');
     overlay.classList.remove('nav-overlay--visible');
     setBodyScrollBlocked(false);
   }
